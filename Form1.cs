@@ -50,8 +50,23 @@ namespace WindowsFormsApp2
                 contextMenuStrip1.Items[CurSelectedNode.Name].Enabled = true;
 
             }
-                 
-   
+            else
+            {
+                Form2 AddPlcFormDlg = new Form2();
+                if (AddPlcFormDlg.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Hi");
+
+                }
+                else
+                {
+                    MessageBox.Show("Cancel");
+                }
+                AddPlcFormDlg.Close();
+
+
+
+            }
         }
 
         private void TreeView1_MouseClick(object sender, MouseEventArgs e)
@@ -59,6 +74,16 @@ namespace WindowsFormsApp2
             TreeNode curNode=this.treeView1.GetNodeAt(e.Location);
             if (curNode is null) return;
             treeView1.SelectedNode = curNode;
+        }
+
+        private void SplitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
