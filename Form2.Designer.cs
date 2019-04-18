@@ -40,8 +40,8 @@
             this.plcSlot = new System.Windows.Forms.TextBox();
             this.pingPlcAddr = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.S7PLCType = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // plcAddCheck
@@ -150,21 +150,6 @@
             this.label5.Text = "Plc类型";
             this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 18;
-            this.listBox1.Items.AddRange(new object[] {
-            "s71200",
-            "s71500",
-            "s7200",
-            "s7300",
-            "s7400"});
-            this.listBox1.Location = new System.Drawing.Point(98, 83);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(146, 22);
-            this.listBox1.TabIndex = 12;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(149, 223);
@@ -174,13 +159,28 @@
             this.button1.Text = "连接测试";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // S7PLCType
+            // 
+            this.S7PLCType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.S7PLCType.FormattingEnabled = true;
+            this.S7PLCType.Items.AddRange(new object[] {
+            "S71200",
+            "S71500",
+            "S7200",
+            "S7300",
+            "S7400"});
+            this.S7PLCType.Location = new System.Drawing.Point(98, 80);
+            this.S7PLCType.Name = "S7PLCType";
+            this.S7PLCType.Size = new System.Drawing.Size(149, 26);
+            this.S7PLCType.TabIndex = 14;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(282, 336);
+            this.Controls.Add(this.S7PLCType);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pingPlcAddr);
             this.Controls.Add(this.plcSlot);
@@ -214,7 +214,7 @@
         private System.Windows.Forms.TextBox plcSlot;
         private System.Windows.Forms.Button pingPlcAddr;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox S7PLCType;
     }
 }

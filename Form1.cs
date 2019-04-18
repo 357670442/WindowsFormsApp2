@@ -12,16 +12,16 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        
+        private PlcManager pmg;
         public Form1()
         {
             InitializeComponent();
            
         }
-
+        public PlcManager Pmg => pmg;
         private void Form1_Load(object sender, EventArgs e)
         {
-
+             pmg = new PlcManager();
         }
 
         private void S7协议ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,10 +53,14 @@ namespace WindowsFormsApp2
             else
             {
                 Form2 AddPlcFormDlg = new Form2();
+                AddPlcFormDlg.ParentForm1 = this;
                 if (AddPlcFormDlg.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Hi");
-
+                    CurSelectedNode.Nodes.Clear();
+                    var nodes = from plc in this.pmg.List
+                                select new TreeNode { Name = ((s7Plc)plc).name, Text = ((s7Plc)plc).name,ContextMenuStrip =contextMenuStrip3};
+                    CurSelectedNode.Nodes.AddRange(nodes.ToArray());
+                    treeView1.ExpandAll();
                 }
                 else
                 {
@@ -85,6 +89,7 @@ namespace WindowsFormsApp2
         {
 
         }
+        
     }
 }
 

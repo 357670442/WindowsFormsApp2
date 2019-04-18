@@ -50,9 +50,14 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.开始连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.断开连接ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -204,6 +209,34 @@
             this.Column6.HeaderText = "当前值";
             this.Column6.Name = "Column6";
             // 
+            // contextMenuStrip3
+            // 
+            this.contextMenuStrip3.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.开始连接ToolStripMenuItem,
+            this.断开连接ToolStripMenuItem});
+            this.contextMenuStrip3.Name = "contextMenuStrip2";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(241, 121);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(240, 28);
+            this.toolStripMenuItem1.Text = "Delete";
+            // 
+            // 开始连接ToolStripMenuItem
+            // 
+            this.开始连接ToolStripMenuItem.Name = "开始连接ToolStripMenuItem";
+            this.开始连接ToolStripMenuItem.Size = new System.Drawing.Size(240, 28);
+            this.开始连接ToolStripMenuItem.Text = "开始连接";
+            // 
+            // 断开连接ToolStripMenuItem
+            // 
+            this.断开连接ToolStripMenuItem.Name = "断开连接ToolStripMenuItem";
+            this.断开连接ToolStripMenuItem.Size = new System.Drawing.Size(240, 28);
+            this.断开连接ToolStripMenuItem.Text = "断开连接";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -218,6 +251,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -239,6 +273,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 开始连接ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 断开连接ToolStripMenuItem;
     }
 }
 
