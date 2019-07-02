@@ -1,4 +1,5 @@
-﻿using System;
+﻿using S7.Net;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,23 @@ namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
-        private PlcManager pmg;
+        private PlcManager pmg=new PlcManager();
+       
+        public ContextMenuStrip plcContextStrip => contextMenuStrip3;
+        public ContextMenuStrip varContextStrip => contextMenuStrip4;
+        public PlcManager Pmg => pmg;
+        
+        public DataGridView VarGridView=>varGridView1;
         public Form1()
         {
             InitializeComponent();
            
         }
-        public PlcManager Pmg => pmg;
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-             pmg = new PlcManager();
+            
+
         }
 
         private void S7协议ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -46,9 +54,16 @@ namespace WindowsFormsApp2
             ToolStripItem Item1 = e.ClickedItem;
             if (Item1.Equals(this.contextMenuStrip2.Items[0]))
             {
-                treeView1.Nodes.Remove(CurSelectedNode);
-                contextMenuStrip1.Items[CurSelectedNode.Name].Enabled = true;
-
+                if (CurSelectedNode.Nodes.Count==0)
+                {
+                    treeView1.Nodes.Remove(CurSelectedNode);
+                    contextMenuStrip1.Items[CurSelectedNode.Name].Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("CurTreeNode is not Empty!");
+                }
+                return;
             }
             else
             {
@@ -58,7 +73,7 @@ namespace WindowsFormsApp2
                 {
                     CurSelectedNode.Nodes.Clear();
                     var nodes = from plc in this.pmg.List
-                                select new TreeNode { Name = ((s7Plc)plc).name, Text = ((s7Plc)plc).name,ContextMenuStrip =contextMenuStrip3};
+                                select plc.Node;
                     CurSelectedNode.Nodes.AddRange(nodes.ToArray());
                     treeView1.ExpandAll();
                 }
@@ -68,7 +83,7 @@ namespace WindowsFormsApp2
                 }
                 AddPlcFormDlg.Close();
 
-
+                return;
 
             }
         }
@@ -80,8 +95,132 @@ namespace WindowsFormsApp2
             treeView1.SelectedNode = curNode;
         }
 
-        private void SplitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        private void addPlcVar(object sender, EventArgs e)
         {
+           
+        }
+
+        private void ContextMenuStrip3_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            TreeNode CurSelectedNode = treeView1.SelectedNode;
+            ToolStripItem Item1 = e.ClickedItem;
+            var plc = pmg.FindPLCByName(CurSelectedNode.Name);
+            
+
+            if (Item1.Equals(this.contextMenuStrip3.Items[3]))
+            {
+             
+          
+                Form3 AddvarDlg = new Form3(this);
+   
+                if (AddvarDlg.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("新增PLC变量成功");
+                }
+                else
+                {
+                    MessageBox.Show("取消增加PLC变量");
+                }
+                AddvarDlg.Close();
+
+
+
+            }
+            if (Item1.Equals(this.contextMenuStrip3.Items[1]))
+            {
+                try
+                {
+                    plc.Open();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    return;
+                    //throw;
+                    
+                }
+                if(plc.IsConnected)
+                {
+                    plc.CycleTimer.Enabled = true;
+                    plc.Node.BackColor = Color.Blue;
+
+
+
+                }
+                else
+                {
+                    MessageBox.Show(string.Format($"{0} is not connected yet", plc.name));
+                }
+
+
+                return;
+            }
+            if (Item1.Equals(this.contextMenuStrip3.Items[2]))
+            {
+                if (plc.IsConnected)
+                {
+                   
+                    plc.CycleTimer.Enabled = false;
+                    plc.Close();
+                    plc.Node.BackColor = Color.Black;
+                    MessageBox.Show("PLC has been closed!");
+
+
+                }
+                else
+                {
+                    MessageBox.Show(string.Format($"{0} is not connected yet", plc.name));
+                }
+
+
+
+
+            }
+            if (Item1.Equals(this.contextMenuStrip3.Items[0]))
+            {
+       
+                if(plc.IsConnected)
+                {
+                    MessageBox.Show("请断开当前PLC！");
+                    return;
+                }
+                else
+                {
+                    CurSelectedNode.Nodes.Remove(plc.Node);
+                    Pmg.del(plc);
+                    MessageBox.Show(string.Format($"PLC{0}已被删除",plc.name));
+                    plc = null;
+                    return;
+                }
+
+
+
+            }
+
+        }
+
+        private void 开始连接ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void ContextMenuStrip4_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            TreeNode CurSelectedNode = treeView1.SelectedNode;
+            TreeNode ParentNode = CurSelectedNode.Parent;
+            ToolStripItem Item1 = e.ClickedItem;
+            var plc = pmg.FindPLCByName(ParentNode.Name);
+            if (Item1.Equals(this.contextMenuStrip3.Items[0]))
+            {
+
+                plc.varlist.Remove(plc.FindvarItemByName(CurSelectedNode.Text));
+                CurSelectedNode.Remove();
+
+
+            }
+
 
         }
 
@@ -89,7 +228,6 @@ namespace WindowsFormsApp2
         {
 
         }
-        
     }
 }
 

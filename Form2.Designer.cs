@@ -46,9 +46,10 @@
             // 
             // plcAddCheck
             // 
-            this.plcAddCheck.Location = new System.Drawing.Point(24, 289);
+            this.plcAddCheck.Location = new System.Drawing.Point(21, 241);
+            this.plcAddCheck.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.plcAddCheck.Name = "plcAddCheck";
-            this.plcAddCheck.Size = new System.Drawing.Size(98, 35);
+            this.plcAddCheck.Size = new System.Drawing.Size(87, 29);
             this.plcAddCheck.TabIndex = 0;
             this.plcAddCheck.Text = "确定";
             this.plcAddCheck.UseVisualStyleBackColor = true;
@@ -56,9 +57,10 @@
             // 
             // plcAddCancel
             // 
-            this.plcAddCancel.Location = new System.Drawing.Point(149, 289);
+            this.plcAddCancel.Location = new System.Drawing.Point(132, 241);
+            this.plcAddCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.plcAddCancel.Name = "plcAddCancel";
-            this.plcAddCancel.Size = new System.Drawing.Size(98, 35);
+            this.plcAddCancel.Size = new System.Drawing.Size(87, 29);
             this.plcAddCancel.TabIndex = 1;
             this.plcAddCancel.Text = "取消";
             this.plcAddCancel.UseVisualStyleBackColor = true;
@@ -67,75 +69,82 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 52);
+            this.label1.Location = new System.Drawing.Point(19, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 18);
+            this.label1.Size = new System.Drawing.Size(61, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "PLC名称";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 115);
+            this.label2.Location = new System.Drawing.Point(19, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 18);
+            this.label2.Size = new System.Drawing.Size(61, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "PLC地址";
-            this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 148);
+            this.label3.Location = new System.Drawing.Point(19, 123);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 18);
+            this.label3.Size = new System.Drawing.Size(61, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "PLC机架";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 181);
+            this.label4.Location = new System.Drawing.Point(19, 151);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 18);
+            this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "PLC插槽";
             // 
             // plcName
             // 
-            this.plcName.Location = new System.Drawing.Point(98, 46);
+            this.plcName.Location = new System.Drawing.Point(87, 38);
+            this.plcName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.plcName.Name = "plcName";
-            this.plcName.Size = new System.Drawing.Size(149, 28);
+            this.plcName.Size = new System.Drawing.Size(133, 25);
             this.plcName.TabIndex = 6;
             this.plcName.Tag = "";
+            this.plcName.Text = "PLC1";
             // 
             // plcAddr
             // 
-            this.plcAddr.Location = new System.Drawing.Point(98, 112);
+            this.plcAddr.Location = new System.Drawing.Point(87, 93);
+            this.plcAddr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.plcAddr.Name = "plcAddr";
-            this.plcAddr.Size = new System.Drawing.Size(149, 28);
+            this.plcAddr.Size = new System.Drawing.Size(133, 25);
             this.plcAddr.TabIndex = 7;
+            this.plcAddr.Text = "192.168.0.1";
             // 
             // plcRack
             // 
-            this.plcRack.Location = new System.Drawing.Point(98, 145);
+            this.plcRack.Location = new System.Drawing.Point(87, 121);
+            this.plcRack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.plcRack.Name = "plcRack";
-            this.plcRack.Size = new System.Drawing.Size(149, 28);
+            this.plcRack.Size = new System.Drawing.Size(133, 25);
             this.plcRack.TabIndex = 8;
+            this.plcRack.Text = "0";
             // 
             // plcSlot
             // 
-            this.plcSlot.Location = new System.Drawing.Point(98, 178);
+            this.plcSlot.Location = new System.Drawing.Point(87, 148);
+            this.plcSlot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.plcSlot.Name = "plcSlot";
-            this.plcSlot.Size = new System.Drawing.Size(149, 28);
+            this.plcSlot.Size = new System.Drawing.Size(133, 25);
             this.plcSlot.TabIndex = 9;
+            this.plcSlot.Text = "1";
             // 
             // pingPlcAddr
             // 
-            this.pingPlcAddr.Location = new System.Drawing.Point(24, 223);
+            this.pingPlcAddr.Location = new System.Drawing.Point(21, 186);
+            this.pingPlcAddr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pingPlcAddr.Name = "pingPlcAddr";
-            this.pingPlcAddr.Size = new System.Drawing.Size(98, 35);
+            this.pingPlcAddr.Size = new System.Drawing.Size(87, 29);
             this.pingPlcAddr.TabIndex = 10;
             this.pingPlcAddr.Text = "ping";
             this.pingPlcAddr.UseVisualStyleBackColor = true;
@@ -143,18 +152,18 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 85);
+            this.label5.Location = new System.Drawing.Point(19, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 18);
+            this.label5.Size = new System.Drawing.Size(61, 15);
             this.label5.TabIndex = 11;
             this.label5.Text = "Plc类型";
-            this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(149, 223);
+            this.button1.Location = new System.Drawing.Point(132, 186);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 35);
+            this.button1.Size = new System.Drawing.Size(87, 29);
             this.button1.TabIndex = 13;
             this.button1.Text = "连接测试";
             this.button1.UseVisualStyleBackColor = true;
@@ -163,22 +172,18 @@
             // 
             this.S7PLCType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.S7PLCType.FormattingEnabled = true;
-            this.S7PLCType.Items.AddRange(new object[] {
-            "S71200",
-            "S71500",
-            "S7200",
-            "S7300",
-            "S7400"});
-            this.S7PLCType.Location = new System.Drawing.Point(98, 80);
+            this.S7PLCType.Location = new System.Drawing.Point(87, 67);
+            this.S7PLCType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.S7PLCType.Name = "S7PLCType";
-            this.S7PLCType.Size = new System.Drawing.Size(149, 26);
+            this.S7PLCType.Size = new System.Drawing.Size(133, 23);
             this.S7PLCType.TabIndex = 14;
+            this.S7PLCType.SelectedIndexChanged += new System.EventHandler(this.S7PLCType_SelectedIndexChanged);
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 336);
+            this.ClientSize = new System.Drawing.Size(251, 280);
             this.Controls.Add(this.S7PLCType);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
@@ -193,6 +198,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.plcAddCancel);
             this.Controls.Add(this.plcAddCheck);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);
